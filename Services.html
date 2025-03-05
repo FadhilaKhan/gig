@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixMySpace - Masons Services</title>
+    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="Services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .image-placeholder img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .filter-section {
+            display: none; /* Hidden by default */
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .filter-section.active {
+            display: block; /* Show when active */
+        }
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .filter-options label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FixMySpace</div>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="Services.html">Services</a></li>
+            </ul>
+            <button>Get Started</button>
+        </nav>
+        <div class="service-categories">
+            <a href="#" class="active">Masons</a>
+            <a href="#">Carpenters</a>
+            <a href="#">Painters</a>
+            <a href="#">Electricians</a>
+            <a href="#">Cleaners</a>
+            <a href="#">Plumbers</a>
+            <a href="#">Movers</a>
+            <a href="#">Contractors</a>
+            <a href="#">Vehicle Repair Specialists</a>
+        </div>
+    </header>
+
+    <section class="services">
+        <button class="filter-button" onclick="toggleFilter()">Filter +</button>
+        <div class="filter-section" id="filterSection">
+            <h3>Filter Options</h3>
+            <div class="filter-options">
+                <label><input type="checkbox" name="filter" value="bricklaying"> Bricklaying</label>
+                <label><input type="checkbox" name="filter" value="stone-masonry"> Stone Masonry</label>
+                <label><input type="checkbox" name="filter" value="concrete-work"> Concrete Work</label>
+                <label><input type="checkbox" name="filter" value="patio-construction"> Patio Construction</label>
+                <label><input type="checkbox" name="filter" value="retaining-walls"> Retaining Walls</label>
+                <label><input type="checkbox" name="filter" value="pathway-paving"> Pathway Paving</label>
+                <label><input type="checkbox" name="filter" value="fireplace-construction"> Fireplace Construction</label>
+                <label><input type="checkbox" name="filter" value="chimney-repairs"> Chimney Repairs</label>
+            </div>
+            <button onclick="applyFilters()">Apply Filters</button>
+        </div>
+        <div class="service-grid">
+            <div class="service-card" data-category="bricklaying">
+                <div class="image-placeholder"><img src="Image/mason1.1.jpg" alt="Mason Service"></div>
+                <h3>Bricklaying Experts</h3>
+                <p>High-quality bricklaying and construction services.</p>
+                <button>View</button>
+            </div>
+            <div class="service-card" data-category="stone-masonry">
+                <div class="image-placeholder"><img src="Image/mason1.2.jpg" alt="Mason Service"></div>
+                <h3>Stone Masonry</h3>
+                <p>Professional stonework and decorative masonry.</p>
+                <button>View</button>
+            </div>
+            <div class="service-card" data-category="concrete-work">
+                <div class="image-placeholder"><img src="Image/mason1.3.jpg" alt="Mason Service"></div>
+                <h3>Concrete Work</h3>
+                <p>Durable concrete installations and repairs.</p>
+                <button>View</button>
+            </div>
+            <div class="service-card" data-category="patio-construction">
+                <div class="image-placeholder"><img src="Image/mason1.4.jpg" alt="Mason Service"></div>
+                <h3>Patio Construction</h3>
+                <p>Beautiful and durable patio design and construction.</p>
+                <button>View</button>
+            </div>     
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <div class="footer-logo">FixMySpace</div>
+                <div class="social-media">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FixMySpace. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle filter section visibility
+        function toggleFilter() {
+            const filterSection = document.getElementById('filterSection');
+            filterSection.classList.toggle('active');
+        }
+
+        // Apply filters
+        function applyFilters() {
+            const selectedFilters = Array.from(document.querySelectorAll('input[name="filter"]:checked')).map(input => input.value);
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            serviceCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (selectedFilters.length === 0 || selectedFilters.includes(category)) {
+                    card.style.display = 'block'; // Show the card
+                } else {
+                    card.style.display = 'none'; // Hide the card
+                }
+            });
+        }
+    </script>
+</body>
+</html>
