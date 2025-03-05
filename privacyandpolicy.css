@@ -1,0 +1,200 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #004040;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background-color: #004040;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #006060;
+}
+
+/* Header */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #008080;
+    color: #fff;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #fff;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav a.active, nav a:hover {
+    background-color: #20B2AA;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #008080;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-logo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.social-media {
+    display: flex;
+    gap: 10px;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #004040;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav a {
+    color: #E0FFFF;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #004040;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+/* Aligns button and bell together */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between bell and button */
+}
+
+/* Notification Bell */
+.notification-bell {
+    position: relative;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Notification Count Badge */
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 7px;
+    border-radius: 50%;
+}
+
+/* Bell Icon */
+.bell-icon {
+    font-size: 1.5rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.bell-icon:hover {
+    color: #004040; /* Gold color on hover */
+}
+
+/* Privacy Policy Container */
+.privacy-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.privacy-container h1 {
+    text-align: center;
+    color: #004040;
+}
+
+.privacy-container h2 {
+    color: #006060;
+    margin-top: 20px;
+}
+
+.privacy-container p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.privacy-container ul {
+    padding-left: 20px;
+}
+
+.privacy-container ul li {
+    margin-bottom: 10px;
+    color: #444;
+}
