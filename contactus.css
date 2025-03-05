@@ -99,3 +99,222 @@ nav a.active, nav a:hover {
 .bell-icon:hover {
     color: #FFD700; /* Gold color on hover */
 }
+
+/* CONTACT US BODY */
+
+button {
+    background-color: #004040;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #006060;
+}
+
+/* Contact Us Page Styles */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 20px;
+}
+
+.contact-info {
+    width: 40%;
+    background-color: #dcf7f7; /* Light background color for contrast */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    color: #004040;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact-info li {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info li strong {
+    color: #004040;
+    width: 120px; /* Align labels */
+    font-weight: bold;
+}
+
+.contact-info li span {
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Add icons next to each list item */
+.contact-info li::before {
+    content: '';
+    background-color: #004040;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* Custom icon styling for each item */
+.contact-info li.email::before {
+    background-color: #20B2AA;
+}
+
+.contact-info li.phone::before {
+    background-color: #FFD700;
+}
+
+.contact-info li.address::before {
+    background-color: #006060;
+}
+
+/* Hover effect on list items */
+.contact-info li:hover {
+    background-color: #e6f4f4;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-info li:hover::before {
+    background-color: #333; /* Change icon color on hover */
+}
+
+.contact-form {
+    width: 50%;
+    background-color: #dcf7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    color: #004040;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 96%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #004040;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #006060;
+}
+
+/* footer */
+
+/* Footer */
+footer {
+    background-color: #008080;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-logo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.social-media {
+    display: flex;
+    gap: 10px;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #004040;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav a {
+    color: #E0FFFF;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #004040;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
