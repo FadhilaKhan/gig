@@ -6,7 +6,7 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #20B2AA, #008080, rgb(136, 181, 187));
+	background: linear-gradient(to bottom, #074744, #088888, #074744);
 }
 .main{
 	width: 400px;
@@ -76,7 +76,7 @@ button{
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #005050;
+	background: #2eafa9;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 30px;
@@ -87,7 +87,7 @@ button{
 	cursor: pointer;
 }
 button:hover{
-	background: #0a5e5e;
+	background: #1e8681;
 }
 .login{
 	height: 500px;
