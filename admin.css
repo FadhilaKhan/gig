@@ -1,3 +1,5 @@
+/* Existing CSS from your side */
+
 * {
     margin: 0;
     padding: 0;
@@ -38,6 +40,7 @@
     border-radius: 20px;
     outline: none;
 }
+
 /* Sidebar */
 .container {
     display: flex;
@@ -75,7 +78,7 @@
 
 .sidebar ul li a:hover {
     background-color: #0b5757;
-    border-radius: 5px;   /* manage the highlighted thing once you finish it*/
+    border-radius: 5px;
 }
 
 /* Logout button */
@@ -86,10 +89,70 @@
 
 /* Main Content */
 .content {
-    margin-left: 200px;
-    padding: 80px;
+    margin-right: 400px;
+    padding: 70px;
     flex: 1;
     position: fixed;
+    top: 60px;
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+.toggle-buttons {
+    margin-right: 500px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.toggle-btn {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    background-color: #008CBA;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    
+}
+
+.toggle-btn.active {
+    background-color: #005f73;
+}
+
+.toggle-btn:hover {
+    background-color: #006f8e;
+}
+
+/* Table Styling */
+.view-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #008CBA;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.view-btn:hover {
+    background-color: #005f73;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
 }
 
 /* Responsive */

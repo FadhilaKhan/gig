@@ -1,10 +1,12 @@
-// db_connection.php
 <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "fixmyspacedb";
+// db_connection.php
 
+$host = 'localhost';  // Database host
+$username = 'root';   // Database username
+$password = '';       // Database password
+$database = 'fixmyspacedb'; // Database name
+
+// Create connection
 $conn = new mysqli($host, $username, $password, $database);
 
 // Check connection
