@@ -112,30 +112,25 @@ $(document).ready(function() {
     });
     });
 
-    $(document).ready(function() {
-        // Handle delete button click
-        $(document).on('click', '#deleteBtn', function() {
-            var userId = $(this).data('id');
-            var userType = $(this).data('type');
+    $(document).on('click', '#deleteBtn', function () {
+    var userId = $(this).data('id');
+    var userType = $(this).data('type');
 
-            // Confirm before deleting
-            if (confirm('Are you sure you want to delete this user?')) {
-                $.ajax({
-                    url: 'delete_user.php',  // The file that handles deletion
-                    type: 'POST',
-                    data: { id: userId, type: userType },
-                    success: function(response) {
-                        alert(response);  // Show success message
-                        $('#userModal').hide();  // Hide the modal
-                        location.reload();  // Reload the page to remove the deleted user
-                    },
-                    error: function(xhr, status, error) {
-                        console.error("Error:", error);  // Log error details
-                        alert('Failed to delete user.');
-                    }
-                });
+    if (confirm('Are you sure you want to delete this user?')) {
+        $.ajax({
+            url: 'delete_user.php',  // Backend script to delete the user
+            type: 'POST',
+            data: { id: userId, type: userType },
+            success: function (response) {
+                alert(response); // Show success message
+                $('#userModal').hide(); // Hide the modal
+                location.reload(); // Refresh the page to reflect deletion
+            },
+            error: function () {
+                alert('Failed to delete user.');
             }
-        });
+            });
+        }
     });
 
     

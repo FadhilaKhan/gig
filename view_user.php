@@ -1,26 +1,17 @@
 <?php
-<<<<<<< HEAD
-include 'db_connection.php';
 
-=======
-// Include database connection
 include 'db_connection.php';
 
 // Check if an ID and user type are provided
->>>>>>> 0e6c3e459c89033f52e59e654b64ccc73df3444a
 if (!isset($_GET['id']) || !isset($_GET['type'])) {
     die("Invalid request.");
 }
 
 $id = intval($_GET['id']);
-<<<<<<< HEAD
 $type = $_GET['type'];
-
-=======
 $type = $_GET['type']; // Can be 'customer' or 'serviceprovider'
 
 // Fetch user details based on the type
->>>>>>> 0e6c3e459c89033f52e59e654b64ccc73df3444a
 if ($type === "customer") {
     $sql = "SELECT c_id AS id, f_name, l_name, email, phone FROM customer WHERE c_id = ?";
 } else {
@@ -36,7 +27,6 @@ $user = $result->fetch_assoc();
 if (!$user) {
     die("User not found.");
 }
-<<<<<<< HEAD
 ?>
 
 <form id="userForm" method="POST">
@@ -94,7 +84,6 @@ function deleteUser() {
     }
 }
 </script>
-=======
 
 // Handle DELETE Request
 if (isset($_POST['delete'])) {
@@ -191,4 +180,4 @@ $conn->close();
 
 </body>
 </html>
->>>>>>> 0e6c3e459c89033f52e59e654b64ccc73df3444a
+

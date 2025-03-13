@@ -24,6 +24,7 @@ if ($result->num_rows > 0) {
         echo "<strong>Work Status:</strong> <span id='workStatus'>" . $row['work_status'] . "</span><br>";
     }
     echo "<button id='editBtn' class='edit-btn' data-id='$id' data-type='$type'>Edit</button>";
+    echo "<button id='deleteBtn' class='delete-btn' data-id='$id' data-type='$type'>Delete</button>";
 
     // Add the edit form (hidden by default)
     echo "
