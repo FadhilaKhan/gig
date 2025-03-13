@@ -27,6 +27,18 @@
 }
 
 
+<<<<<<< HEAD
+=======
+.search-bar {
+    width: 50%;
+    max-width: 400px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+>>>>>>> 0e6c3e459c89033f52e59e654b64ccc73df3444a
 /* Sidebar */
 .container {
     display: flex;
@@ -75,7 +87,11 @@
 
 /* Main Content */
 .content {
+<<<<<<< HEAD
     margin-right: 1000px;
+=======
+    margin-right: 400px;
+>>>>>>> 0e6c3e459c89033f52e59e654b64ccc73df3444a
     padding: 70px;
     flex: 1;
     position: fixed;
@@ -160,6 +176,7 @@ th, td {
 
 th {
     background-color: #f4f4f4;
+<<<<<<< HEAD
 }
 
 /* Modal styling */
@@ -363,6 +380,8 @@ th {
 
 #editForm button:hover {
     background-color: #45a049;
+=======
+>>>>>>> 0e6c3e459c89033f52e59e654b64ccc73df3444a
 }
 
 /* Responsive */
@@ -385,4 +404,10 @@ th {
         margin-left: 180px;
     }
 
+<<<<<<< HEAD
+=======
+    .search-bar {
+        width: 90%;
+    }
+>>>>>>> 0e6c3e459c89033f52e59e654b64ccc73df3444a
 }

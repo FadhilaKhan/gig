@@ -1,5 +1,3 @@
-admin.php
-
 <?php
 // Start the session
 session_start();
@@ -145,14 +143,14 @@ $(document).ready(function() {
 $('#userManagement').click(function (e) {
     e.preventDefault();
     
-    $('#content').html(`
+    $('#content').html(
         <h1>User Management</h1>
         <div class="toggle-buttons">
             <button id="customerProfileBtn" class="toggle-btn">Customer Profile</button>
             <button id="serviceProviderProfileBtn" class="toggle-btn">Service Provider Profile</button>
         </div>
         <div id="userTable"></div>
-    `);
+    );
 });
 
 // Use event delegation to handle dynamically added buttons
@@ -201,3 +199,7 @@ function fetchServiceProviders() {
 
 </body>
 </html>
+
+i need to add view button for my customer profile button as well as an action
+
+
