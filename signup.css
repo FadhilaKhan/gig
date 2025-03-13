@@ -1,57 +1,61 @@
-body{
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #074744, #088888, #074744);
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(to bottom, #074744, #088888, #074744);
 }
-.main{
-	width: 400px;
-	height: 500px;
-	background: red;
-	overflow: hidden;
-	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
-	border-radius: 10px;
-	box-shadow: 5px 20px 50px #000;
+
+.main {
+    width: 400px;
+    height: 500px;
+    /* Replace 'YOUR_LOCAL_IMAGE.jpg' with a valid local image or remove if not needed */
+    background: url("YOUR_LOCAL_IMAGE.jpg") no-repeat center/cover; 
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+    overflow: hidden;
 }
-#chk{
-	display: none;
+
+#chk {
+    display: none;
 }
-.signup{
-	position: relative;
-	width:100%;
-	height: 120%;
+
+.signup {
+    position: relative;
+    width: 100%;
+    height: 120%;
 }
-label{
-	color: #fff;
-	font-size: 2.3em;
-	justify-content: center;
-	display: flex;
-	margin: 5px;
-	font-weight: bold;
-	cursor: pointer;
-	transition: .5s ease-in-out;
+
+label {
+    color: #fff;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
 }
-input{
-	width: 60%;
-	height: 10px;
-	background: #e0dede;
-	justify-content: center;
-	display: flex;
-	margin: 15px auto;
-	padding: 12px;
-	border: none;
-	outline: none;
-	border-radius: 5px;
+
+input {
+    width: 60%;
+    height: 10px;
+    background: #e0dede;
+    display: flex;
+    margin: 15px auto;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
 }
+
 select {
     width: 66%;
     height: 35px;
     background: #e0dede;
-    justify-content: center;
     display: flex;
     margin: 15px auto;
     padding: 10px;
@@ -61,52 +65,55 @@ select {
     font-size: 1em;
     cursor: pointer;
     color: #333;
-    appearance: none; /* Removes default browser styling */
+    appearance: none;
 }
 
-
-/* Custom dropdown arrow */
 select::-ms-expand {
     display: none;
 }
-button{
-	width: 66%;
-	height: 34px;
-	margin: 67px;
-	justify-content: center;
-	display: block;
-	color: #fff;
-	background: #2eafa9;
-	font-size: 1em;
-	font-weight: bold;
-	margin-top: 30px;
-	outline: none;
-	border: none;
-	border-radius: 5px;
-	transition: .2s ease-in;
-	cursor: pointer;
-}
-button:hover{
-	background: #1e8681;
-}
-.login{
-	height: 500px;
-	background: #eee;
-	border-radius: 60% / 10%;
-	transform: translateY(-180px);
-	transition: .8s ease-in-out;
-}
-.login label{
-	color: #005050;
-	transform: scale(.6);
+
+button {
+    width: 66%;
+    height: 34px;
+    margin: 67px;
+    display: block;
+    color: #fff;
+    background: #2eafa9;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
 }
 
-#chk:checked ~ .login{
-	transform: translateY(-500px);
+button:hover {
+    background: #1e8681;
 }
-#chk:checked ~ .login label{
-	transform: scale(1);	
+
+.login {
+    height: 500px;
+    background: #eee;
+    border-radius: 60% / 10%;
+    transform: translateY(-180px);
+    transition: .8s ease-in-out;
 }
-#chk:checked ~ .signup label{
-	transform: scale(.6);
+
+.login label {
+    color: #005050;
+    transform: scale(.6);
+}
+
+#chk:checked ~ .login {
+    transform: translateY(-500px);
+}
+
+#chk:checked ~ .login label {
+    transform: scale(1);
+}
+
+#chk:checked ~ .signup label {
+    transform: scale(.6);
 }

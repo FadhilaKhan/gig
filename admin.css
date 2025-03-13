@@ -1,3 +1,5 @@
+/* Existing CSS from your side */
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +15,7 @@
     padding: 15px 20px;
     color: white;
     position: fixed;
-    width: 100%;
+    width: 19.2%;
     top: 0;
     left: 0;
     z-index: 1000; 
@@ -24,20 +26,7 @@
     font-weight: bold;
 }
 
-.search-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
 
-.search-bar {
-    width: 50%;
-    max-width: 400px;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-}
 /* Sidebar */
 .container {
     display: flex;
@@ -75,7 +64,7 @@
 
 .sidebar ul li a:hover {
     background-color: #0b5757;
-    border-radius: 5px;   /* manage the highlighted thing once you finish it*/
+    border-radius: 5px;
 }
 
 /* Logout button */
@@ -86,10 +75,294 @@
 
 /* Main Content */
 .content {
-    margin-left: 200px;
-    padding: 80px;
+    margin-right: 1000px;
+    padding: 70px;
     flex: 1;
     position: fixed;
+    top: 60px;
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+/* Styling for User Management Buttons */
+.toggle-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.toggle-btn {
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Customer Profile Button */
+#customerProfileBtn {
+    background-color: #007BFF;
+    color: white;
+}
+
+#customerProfileBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Service Provider Profile Button */
+#serviceProviderProfileBtn {
+    background-color: #28A745;
+    color: white;
+}
+
+#serviceProviderProfileBtn:hover {
+    background-color: #1e7e34;
+}
+
+/* Table Container */
+#userTable {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling */
+.view-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #008CBA;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.view-btn:hover {
+    background-color: #005f73;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+    padding-top: 60px;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Adjust the width of the modal */
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative; /* Ensure that the close button is positioned relative to this container */
+}
+
+/* Close button inside the modal */
+.close-btn {
+    color: #000000;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 15px; /* Position from the right */
+    top: 15px;  /* Position from the top */
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* User details styling */
+#userDetails {
+    margin-bottom: 20px;
+}
+
+#userDetails strong {
+    font-weight: bold;
+    color: #333;
+}
+
+#userDetails span {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Edit button styling */
+.edit-btn {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Styling for the edit form inside the modal */
+#editForm {
+    display: none;
+}
+
+#editForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+#editForm label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#editForm input, #editForm textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+}
+
+#editForm button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#editForm button:hover {
+    background-color: #45a049;
+}
+
+/* Popup Styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+#userEditForm div {
+    margin-bottom: 10px;
+}
+
+#userEditForm input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.edit-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    border: none;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Edit form styling */
+#editForm {
+    display: none;
+    margin-top: 20px;
+}
+
+#editForm input {
+    padding: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#editForm button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#editForm button:hover {
+    background-color: #45a049;
 }
 
 /* Responsive */
@@ -100,10 +373,6 @@
 
     .content {
         margin-left: 200px;
-    }
-
-    .search-bar {
-        width: 80%;
     }
 }
 
@@ -116,7 +385,4 @@
         margin-left: 180px;
     }
 
-    .search-bar {
-        width: 90%;
-    }
 }

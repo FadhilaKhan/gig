@@ -171,6 +171,37 @@ nav a.active, nav a:hover {
     color: #004040;
     margin-bottom: 10px;
 }
+ .dashboard-info {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 1.2em;
+    }
+    .profile-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: auto;
+    }
+    .profile-container img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    .profile-container a {
+      color: #000;
+      text-decoration: none;
+    }
+    .profile-container .Lbutton {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .profile-container .Lbutton:hover {
+      background-color: #0056b3;
+    }
 
 /* Footer */
 footer {
