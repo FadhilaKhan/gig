@@ -110,48 +110,48 @@ $(document).ready(function() {
     $('.close-btn').click(function() {
         $('#userModal').hide();
     });
-});
-
-$(document).ready(function() {
-    // Handle delete button click
-    $(document).on('click', '#deleteBtn', function() {
-        var userId = $(this).data('id');
-        var userType = $(this).data('type');
-
-        // Confirm before deleting
-        if (confirm('Are you sure you want to delete this user?')) {
-            $.ajax({
-                url: 'delete_user.php',  // The file that handles deletion
-                type: 'POST',
-                data: { id: userId, type: userType },
-                success: function(response) {
-                    alert(response);  // Show success message
-                    $('#userModal').hide();  // Hide the modal
-                    location.reload();  // Reload the page to remove the deleted user
-                },
-                error: function(xhr, status, error) {
-                    console.error("Error:", error);  // Log error details
-                    alert('Failed to delete user.');
-                }
-            });
-        }
     });
-});
 
+    $(document).ready(function() {
+        // Handle delete button click
+        $(document).on('click', '#deleteBtn', function() {
+            var userId = $(this).data('id');
+            var userType = $(this).data('type');
+
+            // Confirm before deleting
+            if (confirm('Are you sure you want to delete this user?')) {
+                $.ajax({
+                    url: 'delete_user.php',  // The file that handles deletion
+                    type: 'POST',
+                    data: { id: userId, type: userType },
+                    success: function(response) {
+                        alert(response);  // Show success message
+                        $('#userModal').hide();  // Hide the modal
+                        location.reload();  // Reload the page to remove the deleted user
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error:", error);  // Log error details
+                        alert('Failed to delete user.');
+                    }
+                });
+            }
+        });
+    });
 
     
-$('#userManagement').click(function (e) {
-    e.preventDefault();
-    
-    $('#content').html(
-        <h1>User Management</h1>
-        <div class="toggle-buttons">
-            <button id="customerProfileBtn" class="toggle-btn">Customer Profile</button>
-            <button id="serviceProviderProfileBtn" class="toggle-btn">Service Provider Profile</button>
-        </div>
-        <div id="userTable"></div>
-    );
-});
+    $('#userManagement').click(function (e) {
+        e.preventDefault();
+        
+        $('#content').html(`
+            <h1>User Management</h1>
+            <div class="toggle-buttons">
+                <button id="customerProfileBtn" class="toggle-btn">Customer Profile</button>
+                <button id="serviceProviderProfileBtn" class="toggle-btn">Service Provider Profile</button>
+            </div>
+            <div id="userTable"></div>
+        `);
+    });
+
 
 // Use event delegation to handle dynamically added buttons
 $(document).on('click', '#customerProfileBtn', function () {
@@ -194,12 +194,8 @@ function fetchServiceProviders() {
     $('.logout').click(function(e) {
             e.preventDefault();  // Prevent default link behavior
             window.location.href = 'logout.php';  // Redirect to logout.php
-        });
+    });
 </script>
 
 </body>
 </html>
-
-i need to add view button for my customer profile button as well as an action
-
-
