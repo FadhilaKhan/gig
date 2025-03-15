@@ -1,0 +1,188 @@
+/* Service Details Section */
+.service-details {
+    padding: 40px;
+    background-color: #ffffff;
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.service-info {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.image-placeholder img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.details {
+    flex: 1;
+}
+
+.details h2 {
+    margin-top: 0;
+    font-size: 32px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.details p {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.details p strong {
+    color: #1abc9c;
+}
+
+.book-service-btn {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.book-service-btn:hover {
+    background-color: #16a085;
+}
+
+/* Ratings & Reviews Section */
+.ratings-reviews {
+    padding: 40px;
+    background-color: #ffffff;
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.ratings-reviews h2 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.review {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.review:hover {
+    transform: translateY(-5px);
+}
+
+.review:last-child {
+    border-bottom: none;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.username {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 20px;
+}
+
+.stars {
+    color: #f1c40f;
+    font-size: 24px;
+}
+
+.comment {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.review-date {
+    font-size: 16px;
+    color: #888;
+    margin-top: 15px;
+}
+
+/* Add Review Section */
+.book-service {
+    padding: 40px;
+    background-color: #ffffff;
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.book-service h2 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.feedback, .comment {
+    margin-bottom: 30px;
+}
+
+.feedback label, .comment label {
+    display: block;
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.feedback select, .comment textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.feedback select:focus, .comment textarea:focus {
+    border-color: #1abc9c;
+    outline: none;
+}
+
+.comment textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.book-service button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.book-service button:hover {
+    background-color: #16a085;
+}
+

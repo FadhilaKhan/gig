@@ -148,48 +148,89 @@ $(document).ready(function() {
     });
 
 
-// Use event delegation to handle dynamically added buttons
-$(document).on('click', '#customerProfileBtn', function () {
-    fetchCustomers();
-});
-
-$(document).on('click', '#serviceProviderProfileBtn', function () {
-    fetchServiceProviders();
-});
-
-// Function to fetch Customer Data
-function fetchCustomers() {
-    $.ajax({
-        url: 'fetch_customers.php',
-        type: 'GET',
-        success: function (data) {
-            $('#userTable').html(data);
-        },
-        error: function () {
-            alert('Failed to fetch customer data.');
-        }
+    // Use event delegation to handle dynamically added buttons
+    $(document).on('click', '#customerProfileBtn', function () {
+        fetchCustomers();
     });
-}
 
-// Function to fetch Service Provider Data
-function fetchServiceProviders() {
-    $.ajax({
-        url: 'fetch_service_providers.php',
-        type: 'GET',
-        success: function (data) {
-            $('#userTable').html(data);
-        },
-        error: function () {
-            alert('Failed to fetch service provider data.');
-        }
+    $(document).on('click', '#serviceProviderProfileBtn', function () {
+        fetchServiceProviders();
     });
-}
 
-    // Event listener for logout click
-    $('.logout').click(function(e) {
-            e.preventDefault();  // Prevent default link behavior
-            window.location.href = 'logout.php';  // Redirect to logout.php
+    // Function to fetch Customer Data
+    function fetchCustomers() {
+        $.ajax({
+            url: 'fetch_customers.php',
+            type: 'GET',
+            success: function (data) {
+                $('#userTable').html(data);
+            },
+            error: function () {
+                alert('Failed to fetch customer data.');
+            }
+        });
+    }
+
+    // Function to fetch Service Provider Data
+    function fetchServiceProviders() {
+        $.ajax({
+            url: 'fetch_service_providers.php',
+            type: 'GET',
+            success: function (data) {
+                $('#userTable').html(data);
+            },
+            error: function () {
+                alert('Failed to fetch service provider data.');
+            }
+        });
+    }
+
+    $('#reviewManagement').click(function (e) {
+    e.preventDefault();
+    
+    $('#content').html('<h1>Review Management</h1><div id="reviewTable"></div>');
+
+        fetchReviews();
     });
+
+    // Function to fetch reviews
+    function fetchReviews() {
+        $.ajax({
+            url: 'view.php',
+            type: 'GET',
+            success: function (data) {
+                $('#reviewTable').html(data);
+            },
+            error: function () {
+                alert('Failed to fetch reviews.');
+            }
+        });
+    }
+
+    $(document).on('click', '.delete-review', function () {
+    var reviewId = $(this).data('id');
+        if (confirm('Are you sure you want to delete this review?')) {
+            $.ajax({
+                url: 'delete_review.php',
+                type: 'POST',
+                data: { id: reviewId },
+                success: function (response) {
+                    alert(response);
+                    fetchReviews(); // Refresh the review list
+                },
+                error: function () {
+                    alert('Failed to delete review.');
+                }
+            });
+            }
+    });
+
+
+        // Event listener for logout click
+        $('.logout').click(function(e) {
+                e.preventDefault();  // Prevent default link behavior
+                window.location.href = 'logout.php';  // Redirect to logout.php
+        });
 </script>
 
 </body>
