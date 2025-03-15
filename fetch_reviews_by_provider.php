@@ -13,15 +13,11 @@ if (isset($_GET['sp_id'])) {
             r.r_date 
         FROM Review r
         JOIN Customer c ON r.c_id = c.c_id
-        JOIN Service s ON r.s_id = s.s_id  -- Join Service table
-        WHERE s.sp_id = ?  -- Use sp_id from Service table
+        WHERE r.sp_id = $spId
         ORDER BY r.r_date DESC
     ";
 
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("i", $spId);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
         $output = '';
@@ -43,8 +39,6 @@ if (isset($_GET['sp_id'])) {
     } else {
         echo "<tr><td colspan='6'>No reviews found for this service provider.</td></tr>";
     }
-
-    $stmt->close();
 } else {
     echo "<tr><td colspan='6'>Invalid request.</td></tr>";
 }
