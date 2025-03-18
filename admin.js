@@ -7,18 +7,9 @@ $('#dashboard').click(function (e) {
         <div class="dashboard-container">
             <div class="dashboard-card" id="totalCustomers">Loading...</div>
             <div class="dashboard-card" id="totalProviders">Loading...</div>
-            <div class="dashboard-card" id="totalReviews">Loading...</div>
+            <div class="dashboard-card" id="avgRating">Loading...</div>
         </div>
-        <h2>Recent Reviews</h2>
-        <table border="1" id="recentReviewsTable">
-            <tr>
-                <th>Customer</th>
-                <th>Service</th>
-                <th>Rating</th>
-                <th>Comment</th>
-                <th>Date</th>
-            </tr>
-        </table>
+        
     `);
 
     fetchDashboardStats();
@@ -32,25 +23,17 @@ function fetchDashboardStats() {
         type: 'GET',
         dataType: 'json',
         success: function (data) {
-            $('#totalCustomers').html(`<h3>Total Customers</h3><p>${data.totalCustomers}</p>`);
-            $('#totalProviders').html(`<h3>Total Service Providers</h3><p>${data.totalProviders}</p>`);
-            $('#totalReviews').html(`<h3>Total Reviews</h3><p>${data.totalReviews}</p>`);
+            // Update stats in the dashboard
+            $('#totalCustomers').html(`<h3>Total Customers</h3><p>${data.total_customers}</p>`);
+            $('#totalProviders').html(`<h3>Total Service Providers</h3><p>${data.total_providers}</p>`);
+            $('#avgRating').html(`<h3>Average Rating</h3><p>${data.avg_rating}</p>`);
 
-            // Populate recent reviews table
-            var reviewsTable = $('#recentReviewsTable');
-            reviewsTable.find("tr:gt(0)").remove(); // Clear existing rows
 
-            data.recentReviews.forEach(review => {
-                reviewsTable.append(`
-                    <tr>
-                        <td>${review.customer}</td>
-                        <td>${review.service}</td>
-                        <td>${review.rating}</td>
-                        <td>${review.comment}</td>
-                        <td>${review.r_date}</td>
-                    </tr>
-                `);
-            });
+            // Populate upcoming schedules table
+            var schedulesTable = $('#upcomingSchedulesTable');
+            schedulesTable.find("tr:gt(0)").remove(); // Clear existing rows
+
+            
         },
         error: function () {
             alert('Failed to load dashboard stats.');
@@ -305,8 +288,31 @@ $(document).ready(function() {
         });
     });
 
-        // Event listener for logout click
-        $('.logout').click(function(e) {
-                e.preventDefault();  // Prevent default link behavior
-                window.location.href = 'logout.php';  // Redirect to logout.php
-        });
+
+    
+// JavaScript to handle the "Add Service" sidebar option
+$('#addService').click(function(e) {
+    e.preventDefault(); // Prevent default link behavior
+    
+    // Dynamically load the add_service.php content into the #content div
+    $('#content').html('<h1>Loading Add Service...</h1>'); // Optionally show loading text while fetching
+
+    $.ajax({
+        url: 'add_service.php', // Path to your PHP page
+        type: 'GET',
+        success: function(response) {
+            $('#content').html(response); // Insert the response (HTML content) into the #content div
+        },
+        error: function() {
+            $('#content').html('<p style="color: red;">Failed to load the page. Please try again.</p>');
+        }
+    });
+});
+
+
+// Event listener for logout click
+$('.logout').click(function(e) {
+e.preventDefault();  // Prevent default link behavior
+window.location.href = 'logout.php';  // Redirect to logout.php
+});
+    

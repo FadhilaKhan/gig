@@ -32,6 +32,7 @@ if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
                 <li><a href="#" id="userManagement">User Management</a></li>
                 <li><a href="#" id="reviewManagement">Review Management</a></li>
                 <li><a href="#" id="contactRequest">Contact Request</a></li>
+                <li><a href="#" id="addService">Service Management</a></li>
                 <li><a href="#" class="logout">Logout</a></li>
             </ul>
         </aside>

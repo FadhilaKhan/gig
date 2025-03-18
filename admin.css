@@ -494,3 +494,103 @@ th {
 #contactTableContainer tr:hover {
     background-color: #e6f2f2;
 }
+
+.add-service-container {
+    background-color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Form styling */
+.add-service-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.add-service-form input:focus {
+    border-color: #008080;
+    box-shadow: 0 0 5px rgba(0, 128, 128, 0.5);
+}
+
+.add-service-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #008080;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-service-form button:hover {
+    background-color: #006666;
+}
+
+/* Existing Services List */
+.service-list {
+    margin-top: 30px;
+}
+
+.service-list h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-list ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fafafa;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.service-list ul li span {
+    font-size: 16px;
+    color: #333;
+}
+
+.service-list ul li button {
+    padding: 5px 10px;
+    font-size: 14px;
+    color: white;
+    background-color: #ff5c5c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.service-list ul li button:hover {
+    background-color: #ff1e1e;
+}

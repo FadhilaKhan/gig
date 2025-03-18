@@ -1,7 +1,7 @@
 <?php
 include 'db_connection.php'; // Include your database connection
 
-$query = "SELECT id, user_id, user_email, message, created_at FROM contact_us ORDER BY created_at DESC";
+$query = "SELECT id, c_id, user_email, message, created_at FROM contact_us ORDER BY created_at DESC";
 $result = $conn->query($query);
 
 if ($result->num_rows > 0) {
@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
                 <td>{$row['id']}</td>
-                <td>{$row['user_id']}</td>
+                <td>{$row['c_id']}</td>
                 <td>{$row['user_email']}</td>
                 <td>{$row['message']}</td>
                 <td>{$row['created_at']}</td>

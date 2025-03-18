@@ -1,63 +1,54 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-include 'db_connection.php';
-
-// Check database connection
-if ($conn->connect_error) {
-    die(json_encode(["error" => "Database connection failed: " . $conn->connect_error]));
-}
+header('Content-Type: application/json');
+require 'db_connection.php'; // Include the database connection
 
 // Fetch total customers
-$customerQuery = "SELECT COUNT(*) AS total_customers FROM Customer";
-$customerResult = $conn->query($customerQuery);
-if (!$customerResult) {
-    die(json_encode(["error" => "Customer Query Failed: " . $conn->error]));
-}
-$totalCustomers = $customerResult->fetch_assoc()['total_customers'];
+$total_customers = $conn->query("SELECT COUNT(*) AS total FROM customer")->fetch_assoc()['total'];
 
 // Fetch total service providers
-$serviceQuery = "SELECT COUNT(*) AS total_providers FROM ServiceProvider";
-$serviceResult = $conn->query($serviceQuery);
-if (!$serviceResult) {
-    die(json_encode(["error" => "Service Provider Query Failed: " . $conn->error]));
-}
-$totalProviders = $serviceResult->fetch_assoc()['total_providers'];
+$total_providers = $conn->query("SELECT COUNT(*) AS total FROM serviceprovider")->fetch_assoc()['total'];
 
-// Fetch total reviews
-$reviewQuery = "SELECT COUNT(*) AS total_reviews FROM Review";
-$reviewResult = $conn->query($reviewQuery);
-if (!$reviewResult) {
-    die(json_encode(["error" => "Review Query Failed: " . $conn->error]));
-}
-$totalReviews = $reviewResult->fetch_assoc()['total_reviews'];
+// Fetch total service requests
+$total_requests = $conn->query("SELECT COUNT(*) AS total FROM service_requests")->fetch_assoc()['total'];
 
-// Fetch recent reviews
-$recentReviewsQuery = "
-    SELECT r.r_id, c.f_name AS customer, s.name AS service, r.rating, r.comment, r.r_date 
-    FROM Review r
-    JOIN Customer c ON r.c_id = c.c_id
-    JOIN Service s ON r.s_id = s.s_id
-    ORDER BY r.r_date DESC LIMIT 5";
-$recentReviewsResult = $conn->query($recentReviewsQuery);
+// Fetch pending service requests
+$pending_requests = $conn->query("SELECT COUNT(*) AS total FROM service_requests WHERE status = 'pending'")->fetch_assoc()['total'];
 
-if (!$recentReviewsResult) {
-    die(json_encode(["error" => "Recent Reviews Query Failed: " . $conn->error]));
+// Fetch completed services
+$completed_services = $conn->query("SELECT COUNT(*) AS total FROM schedule WHERE status = 'Completed'")->fetch_assoc()['total'];
+
+// Fetch average rating of service providers
+$avg_rating_result = $conn->query("SELECT AVG(rating) AS avg_rating FROM review");
+$avg_rating = $avg_rating_result->num_rows > 0 ? round($avg_rating_result->fetch_assoc()['avg_rating'], 2) : 0;
+
+// Fetch recent messages
+$messages_query = $conn->query("SELECT user_email, message, created_at FROM contact_us ORDER BY created_at DESC LIMIT 5");
+$messages = [];
+while ($row = $messages_query->fetch_assoc()) {
+    $messages[] = $row;
 }
 
-$recentReviews = [];
-while ($row = $recentReviewsResult->fetch_assoc()) {
-    $recentReviews[] = $row;
+// Fetch upcoming schedules
+$schedules_query = $conn->query("SELECT * FROM schedule WHERE scheduled_date >= CURDATE() ORDER BY scheduled_date ASC LIMIT 5");
+$schedules = [];
+while ($row = $schedules_query->fetch_assoc()) {
+    $schedules[] = $row;
 }
 
 // Return JSON response
-echo json_encode([
-    'totalCustomers' => $totalCustomers,
-    'totalProviders' => $totalProviders,
-    'totalReviews' => $totalReviews,
-    'recentReviews' => $recentReviews
-]);
+$response = [
+    "total_customers" => $total_customers,
+    "total_providers" => $total_providers,
+    "total_requests" => $total_requests,
+    "pending_requests" => $pending_requests,
+    "completed_services" => $completed_services,
+    "avg_rating" => $avg_rating,
+    "recent_messages" => $messages,
+    "upcoming_schedules" => $schedules
+];
 
+echo json_encode($response);
+
+// Close the database connection
 $conn->close();
 ?>
